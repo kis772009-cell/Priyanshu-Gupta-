@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 18th Birthday, Priyanshi! 💕</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #fdf2f8 0%, #fae8ff 50%, #f3e8ff 100%);
+            color: #4a2d5e;
+            overflow-x: hidden;
+        }
+        .script-font {
+            font-family: 'Sacramento', cursive;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(236, 72, 153, 0.4);
+        }
+        .glow-effect-purple {
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 182, 193, 0.5);
+        }
+        /* Flip card styling */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 2s ease-in-out infinite;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdf2f8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f472b6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between selection:bg-pink-300 selection:text-pink-950">
+
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-30">
+        <div class="absolute top-10 left-10 text-pink-400 text-2xl animate-float" style="animation-delay: 0s;">💖</div>
+        <div class="absolute top-1/4 right-16 text-purple-400 text-3xl animate-float" style="animation-delay: 1s;">✨</div>
+        <div class="absolute bottom-20 left-1/4 text-pink-500 text-3xl animate-float" style="animation-delay: 2s;">🌸</div>
+        <div class="absolute bottom-1/3 right-1/3 text-purple-500 text-2xl animate-float" style="animation-delay: 1.5s;">💝</div>
+        <div class="absolute top-1/2 left-5 text-pink-300 text-4xl animate-float" style="animation-delay: 2.5s;">⭐</div>
+    </div>
+
+    <section id="greeting-screen" class="min-h-screen flex flex-col items-center justify-center p-6 text-center z-10 transition-all duration-700">
+        <div class="glass-card p-8 md:p-12 rounded-3xl glow-effect max-w-lg w-full animate-float">
+            <!-- Animated Cat Sticker / Character -->
+            <div class="relative w-36 h-36 mx-auto mb-6 bg-pink-100 rounded-full flex items-center justify-center glow-effect border-4 border-white overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=300&q=80" alt="Cute Cat" class="w-full h-full object-cover animate-pulse-soft" onerror="this.src='https://placehold.co/150x150/ffb6c1/ffffff?text=🐱';">
+                <div class="absolute -bottom-1 right-2 bg-pink-500 text-white text-xs px-2 py-0.5 rounded-full font-bold shadow">VIP ✨</div>
+            </div>
+            
+            <span class="text-pink-600 font-semibold uppercase tracking-widest text-sm bg-pink-100 px-3 py-1 rounded-full">Special Day 🎉</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mt-4 text-gray-800">Hello, <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">Priyanshi</span>!</h1>
+            <p class="text-gray-600 mt-3 text-base md:text-lg">Someone very special is turning a wonderful chapter today. Are you ready for your magical surprise?</p>
+            
+            <button onclick="startCelebration()" class="mt-8 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold rounded-full shadow-lg glow-effect hover:scale-105 transition-all duration-300 flex items-center justify-center mx-auto space-x-3 text-lg">
+                <span>Let's Begin 💕</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <div id="main-content" class="hidden flex-col space-y-16 py-12 px-4 max-w-4xl mx-auto w-full z-10">
+
+        <section id="age-section" class="glass-card rounded-3xl p-8 md:p-10 text-center glow-effect-purple transition-all duration-500">
+            <span class="script-font text-3xl text-pink-600">A Milestone Year</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Welcome to 18! 👑</h2>
+            <p class="text-gray-600 mt-2 max-w-md mx-auto">Stepping into a gorgeous new age filled with grace, dreams, and beautiful moments.</p>
+            
+            <div class="mt-8 flex justify-center items-center">
+                <div id="age-box" onclick="revealAgeDetails()" class="cursor-pointer bg-gradient-to-br from-pink-400 to-purple-500 text-white w-40 h-40 rounded-3xl flex flex-col items-center justify-center shadow-xl glow-effect hover:scale-105 transition-all duration-300">
+                    <i class="fa-solid fa-gift text-3xl mb-2 animate-bounce"></i>
+                    <span class="text-sm font-medium tracking-wide">Tap to Reveal</span>
+                    <span id="age-number" class="text-4xl font-extrabold hidden mt-1">18</span>
+                </div>
+            </div>
+            <div id="age-message" class="hidden mt-6 text-pink-700 font-medium text-lg animate-fade-in bg-pink-50 p-4 rounded-2xl border border-pink-200">
+                ✨ Cheers to 18 years of absolute sweetness and bringing smiles to everyone around you, Priyanshi!
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <div class="text-center">
+                <span class="script-font text-3xl text-pink-600">From the Heart</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">3 Things I Love About You 💖</h2>
+                <p class="text-gray-600 text-sm md:text-base mt-1">Tap or click each card to read a special quality!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="perspective-1000 h-64 cursor-pointer" onclick="flipCard(this)">
+                    <div class="relative w-full h-full transform-style-3d transition-transform duration-700 rounded-3xl shadow-lg">
+                        <div class="absolute inset-0 backface-hidden glass-card rounded-3xl p-6 flex flex-col items-center justify-center text-center border-2 border-pink-200">
+                            <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-2xl mb-4 shadow">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-gray-800">Reason 01</h3>
+                            <p class="text-sm text-pink-600 mt-2 font-medium">Click to flip card ✨</p>
+                        </div>
+                        <div class="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-pink-500 to-purple-600 text-white rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-xl">
+                            <span class="text-2xl mb-2">💫</span>
+                            <h3 class="font-bold text-lg">Very Understanding</h3>
+                            <p class="text-sm mt-3 opacity-95 leading-relaxed">"You are very understanding. You always listen with patience and care deeply about how others feel."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="perspective-1000 h-64 cursor-pointer" onclick="flipCard(this)">
+                    <div class="relative w-full h-full transform-style-3d transition-transform duration-700 rounded-3xl shadow-lg">
+                        <div class="absolute inset-0 backface-hidden glass-card rounded-3xl p-6 flex flex-col items-center justify-center text-center border-2 border-purple-200">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-purple-500 text-2xl mb-4 shadow">
+                                <i class="fa-solid fa-feather-pointed"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-gray-800">Reason 02</h3>
+                            <p class="text-sm text-purple-600 mt-2 font-medium">Click to flip card ✨</p>
+                        </div>
+                        <div class="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-xl">
+                            <span class="text-2xl mb-2">🌸</span>
+                            <h3 class="font-bold text-lg">Beautiful Thoughts</h3>
+                            <p class="text-sm mt-3 opacity-95 leading-relaxed">"Your thoughts are really beautiful. The way you perceive the world is so pure and inspiring."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="perspective-1000 h-64 cursor-pointer" onclick="flipCard(this)">
+                    <div class="relative w-full h-full transform-style-3d transition-transform duration-700 rounded-3xl shadow-lg">
+                        <div class="absolute inset-0 backface-hidden glass-card rounded-3xl p-6 flex flex-col items-center justify-center text-center border-2 border-pink-200">
+                            <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center text-pink-500 text-2xl mb-4 shadow">
+                                <i class="fa-solid fa-face-smile-beam"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-gray-800">Reason 03</h3>
+                            <p class="text-sm text-pink-600 mt-2 font-medium">Click to flip card ✨</p>
+                        </div>
+                        <div class="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-pink-600 to-rose-500 text-white rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-xl">
+                            <span class="text-2xl mb-2">💖</span>
+                            <h3 class="font-bold text-lg">Kind & Good Person</h3>
+                            <p class="text-sm mt-3 opacity-95 leading-relaxed">"You are a very kind and good person with a golden heart that radiates warmth everywhere."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-3xl p-8 md:p-10 text-center glow-effect">
+            <span class="script-font text-3xl text-pink-600">Fun Activity</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Pop the Balloons! 🎈</h2>
+            <p class="text-gray-600 mt-1">Tap the balloons below to discover sweet qualities about Priyanshi!</p>
+
+            <div id="balloon-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mt-8">
+                <!-- Balloons will be dynamically generated or populated -->
+                <div onclick="popBalloon(this, 'Beautiful 🌟')" class="balloon cursor-pointer bg-gradient-to-b from-pink-400 to-pink-600 text-white rounded-t-full rounded-b-2xl h-36 flex flex-col items-center justify-between p-4 shadow-lg hover:scale-105 transition-all relative">
+                    <i class="fa-solid fa-heart text-white opacity-80 text-xl"></i>
+                    <span class="font-bold text-sm text-center balloon-text">Pop Me!</span>
+                    <div class="w-1 h-6 bg-pink-300 -bottom-6 absolute"></div>
+                </div>
+                <div onclick="popBalloon(this, 'Smart 🧠')" class="balloon cursor-pointer bg-gradient-to-b from-purple-400 to-purple-600 text-white rounded-t-full rounded-b-2xl h-36 flex flex-col items-center justify-between p-4 shadow-lg hover:scale-105 transition-all relative">
+                    <i class="fa-solid fa-star text-white opacity-80 text-xl"></i>
+                    <span class="font-bold text-sm text-center balloon-text">Pop Me!</span>
+                    <div class="w-1 h-6 bg-purple-300 -bottom-6 absolute"></div>
+                </div>
+                <div onclick="popBalloon(this, 'Kind 🥰')" class="balloon cursor-pointer bg-gradient-to-b from-rose-400 to-rose-600 text-white rounded-t-full rounded-b-2xl h-36 flex flex-col items-center justify-between p-4 shadow-lg hover:scale-105 transition-all relative">
+                    <i class="fa-solid fa-seedling text-white opacity-80 text-xl"></i>
+                    <span class="font-bold text-sm text-center balloon-text">Pop Me!</span>
+                    <div class="w-1 h-6 bg-rose-300 -bottom-6 absolute"></div>
+                </div>
+                <div onclick="popBalloon(this, 'Precious 💎')" class="balloon cursor-pointer bg-gradient-to-b from-pink-400 to-purple-500 text-white rounded-t-full rounded-b-2xl h-36 flex flex-col items-center justify-between p-4 shadow-lg hover:scale-105 transition-all relative">
+                    <i class="fa-solid fa-gem text-white opacity-80 text-xl"></i>
+                    <span class="font-bold text-sm text-center balloon-text">Pop Me!</span>
+                    <div class="w-1 h-6 bg-pink-300 -bottom-6 absolute"></div>
+                </div>
+                <div onclick="popBalloon(this, 'Caring 🌸')" class="balloon cursor-pointer bg-gradient-to-b from-purple-400 to-pink-500 text-white rounded-t-full rounded-b-2xl h-36 flex flex-col items-center justify-between p-4 shadow-lg hover:scale-105 transition-all relative">
+                    <i class="fa-solid fa-hand-holding-medical text-white opacity-80 text-xl"></i>
+                    <span class="font-bold text-sm text-center balloon-text">Pop Me!</span>
+                    <div class="w-1 h-6 bg-purple-300 -bottom-6 absolute"></div>
+                </div>
+                <div onclick="popBalloon(this, 'Cute 🎀')" class="balloon cursor-pointer bg-gradient-to-b from-pink-500 to-rose-500 text-white rounded-t-full rounded-b-2xl h-36 flex flex-col items-center justify-between p-4 shadow-lg hover:scale-105 transition-all relative">
+                    <i class="fa-solid fa-wand-magic-sparkles text-white opacity-80 text-xl"></i>
+                    <span class="font-bold text-sm text-center balloon-text">Pop Me!</span>
+                    <div class="w-1 h-6 bg-pink-300 -bottom-6 absolute"></div>
+                </div>
+            </div>
+            <div id="balloon-counter" class="mt-10 text-pink-700 font-semibold text-base">Balloons popped: <span id="pop-count">0</span> / 6</div>
+        </section>
+
+        <section class="space-y-6">
+            <div class="text-center">
+                <span class="script-font text-3xl text-pink-600">Cherished Moments</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Cute Memories 📸</h2>
+                <p class="text-gray-600 text-sm md:text-base mt-1">A glimpse into the lovely aura you carry everywhere.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Polaroid 1 -->
+                <div class="bg-white p-4 pb-6 rounded-2xl shadow-xl transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 border border-gray-100">
+                    <div class="h-48 rounded-xl overflow-hidden bg-pink-50 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Memory 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x200/ffb6c1/ffffff?text=Priyanshi';">
+                    </div>
+                    <p class="script-font text-2xl text-center text-gray-800 mt-4">Radiant Smile ✨</p>
+                </div>
+                <!-- Polaroid 2 -->
+                <div class="bg-white p-4 pb-6 rounded-2xl shadow-xl transform -rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 border border-gray-100">
+                    <div class="h-48 rounded-xl overflow-hidden bg-purple-50 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Memory 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x200/dda0dd/ffffff?text=Moments';">
+                    </div>
+                    <p class="script-font text-2xl text-center text-gray-800 mt-4">Pure Soul 🌸</p>
+                </div>
+                <!-- Polaroid 3 -->
+                <div class="bg-white p-4 pb-6 rounded-2xl shadow-xl transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 border border-gray-100 sm:col-span-2 md:col-span-1">
+                    <div class="h-48 rounded-xl overflow-hidden bg-pink-50 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80" alt="Memory 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x200/ffc0cb/ffffff?text=Vibes';">
+                    </div>
+                    <p class="script-font text-2xl text-center text-gray-800 mt-4">Endless Joy 💖</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-3xl p-8 md:p-10 text-center glow-effect-purple">
+            <span class="script-font text-3xl text-pink-600">Make a Wish</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Blow Out the Candles! 🎂</h2>
+            <p class="text-gray-600 mt-1">Click the candles to blow them out and make your secret wish come true!</p>
+
+            <div class="relative max-w-xs mx-auto mt-8">
+                <!-- Cake Illustration -->
+                <div class="relative">
+                    <!-- Candles -->
+                    <div class="flex justify-center space-x-6 mb-2">
+                        <div onclick="blowCandle(this)" class="candle cursor-pointer flex flex-col items-center group">
+                            <div class="flame w-4 h-6 bg-amber-400 rounded-full animate-bounce shadow-lg glow-effect"></div>
+                            <div class="w-2 h-10 bg-pink-300 rounded-sm"></div>
+                        </div>
+                        <div onclick="blowCandle(this)" class="candle cursor-pointer flex flex-col items-center group">
+                            <div class="flame w-4 h-6 bg-amber-400 rounded-full animate-bounce shadow-lg glow-effect" style="animation-delay: 0.2s;"></div>
+                            <div class="w-2 h-10 bg-pink-300 rounded-sm"></div>
+                        </div>
+                        <div onclick="blowCandle(this)" class="candle cursor-pointer flex flex-col items-center group">
+                            <div class="flame w-4 h-6 bg-amber-400 rounded-full animate-bounce shadow-lg glow-effect" style="animation-delay: 0.4s;"></div>
+                            <div class="w-2 h-10 bg-pink-300 rounded-sm"></div>
+                        </div>
+                    </div>
+                    <!-- Cake Body -->
+                    <div class="bg-gradient-to-r from-pink-300 via-pink-400 to-purple-400 h-28 rounded-2xl shadow-xl flex flex-col justify-center items-center text-white font-bold relative border-t-4 border-white">
+                        <div class="absolute top-0 w-full flex justify-around">
+                            <div class="w-6 h-4 bg-white rounded-b-full"></div>
+                            <div class="w-8 h-6 bg-white rounded-b-full"></div>
+                            <div class="w-6 h-4 bg-white rounded-b-full"></div>
+                            <div class="w-7 h-5 bg-white rounded-b-full"></div>
+                        </div>
+                        <span class="text-xl script-font mt-4">Happy 18th Birthday Priyanshi!</span>
+                    </div>
+                    <!-- Cake Base Plate -->
+                    <div class="bg-gray-200 h-4 rounded-full mx-auto w-11/12 shadow-md mt-1"></div>
+                </div>
+            </div>
+
+            <button onclick="blowAllCandles()" class="mt-6 px-6 py-2.5 bg-pink-500 hover:bg-pink-600 text-white text-sm font-semibold rounded-full shadow-md transition-all">
+                Blow All Candles At Once 💨
+            </button>
+            <div id="wish-message" class="hidden mt-4 text-purple-700 font-semibold animate-fade-in">
+                ✨ Your wish has been locked in the stars! May all your dreams come true, Priyanshi.
+            </div>
+        </section>
+
+        <section class="glass-card rounded-3xl p-8 md:p-12 glow-effect">
+            <div class="text-center mb-6">
+                <span class="script-font text-3xl text-pink-600">A Special Note</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Heartfelt Letter 💌</h2>
+            </div>
+
+            <div class="bg-white/90 p-6 md:p-8 rounded-2xl shadow-inner border border-pink-100 text-gray-700 leading-relaxed space-y-4 text-base md:text-lg">
+                <p class="script-font text-3xl text-pink-600">Dearest Priyanshi,</p>
+                <p>Happy 18th Birthday! 🌸 Today marks a wonderful milestone as you officially step into adulthood. Looking back, your presence has always brought such a unique warmth, positivity, and grace into the lives of everyone around you.</p>
+                <p>Your understanding nature, gorgeous thoughts, and exceptionally kind heart make you truly one of a kind. May this year bring you closer to all your aspirations, fill your days with endless laughter, and shower you with all the success and love you so rightfully deserve.</p>
+                <p class="text-right script-font text-3xl text-purple-600 mt-4">With lots of warmth & best wishes 💕</p>
+            </div>
+
+            <!-- Final Gift Box Reveal -->
+            <div class="mt-12 text-center">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">You have a final surprise waiting! 🎁</h3>
+                <div id="gift-box" onclick="openGiftBox()" class="cursor-pointer inline-flex flex-col items-center justify-center w-36 h-36 bg-gradient-to-tr from-pink-500 to-purple-600 text-white rounded-3xl shadow-xl glow-effect hover:scale-105 transition-all duration-300">
+                    <i class="fa-solid fa-gift text-5xl animate-bounce"></i>
+                    <span class="mt-2 text-sm font-semibold">Tap to Open</span>
+                </div>
+
+                <div id="gift-reveal" class="hidden mt-6 p-6 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-2xl border border-pink-300 text-center animate-fade-in max-w-md mx-auto">
+                    <span class="text-3xl">🌟💖👑</span>
+                    <h4 class="text-2xl font-bold text-gray-800 mt-2">You are Amazing, Priyanshi!</h4>
+                    <p class="text-gray-600 text-sm mt-2">May your 18th year be your absolute favorite chapter yet. Keep shining bright!</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="py-6 text-center text-xs text-gray-500 z-10">
+        Made with endless love and care for Priyanshi's 18th Birthday 💕
+    </footer>
+
+    <script>
+        // Trigger initial confetti on load or start
+        function startCelebration() {
+            const greeting = document.getElementById('greeting-screen');
+            const mainContent = document.getElementById('main-content');
+            
+            greeting.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => {
+                greeting.style.display = 'none';
+                mainContent.classList.remove('hidden');
+                mainContent.classList.add('flex');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 500);
+
+            // Celebration confetti
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
+        // Reveal Age function
+        function revealAgeDetails() {
+            const ageBox = document.getElementById('age-box');
+            const ageNumber = document.getElementById('age-number');
+            const icon = ageBox.querySelector('fa-gift');
+            const text = ageBox.querySelector('span:nth-of-type(1)');
+            const msg = document.getElementById('age-message');
+
+            ageBox.classList.remove('from-pink-400', 'to-purple-500');
+            ageBox.classList.add('from-purple-600', 'to-pink-500');
+            
+            if (icon) icon.style.display = 'none';
+            if (text) text.style.display = 'none';
+            ageNumber.classList.remove('hidden');
+            msg.classList.remove('hidden');
+
+            confetti({
+                particleCount: 60,
+                spread: 60,
+                origin: { y: 0.5 }
+            });
+        }
+
+        // Flip Card function
+        function flipCard(cardElement) {
+            const innerCard = cardElement.querySelector('.transform-style-3d');
+            if (innerCard.style.transform === 'rotateY(180deg)') {
+                innerCard.style.transform = 'rotateY(0deg)';
+            } else {
+                innerCard.style.transform = 'rotateY(180deg)';
+            }
+        }
+
+        // Pop Balloon function
+        let poppedCount = 0;
+        function popBalloon(element, qualityText) {
+            if (element.classList.contains('popped')) return;
+            
+            element.classList.add('popped', 'opacity-40', 'scale-90');
+            element.style.pointerEvents = 'none';
+            
+            const textSpan = element.querySelector('.balloon-text');
+            textSpan.textContent = qualityText;
+            textSpan.style.fontSize = '0.75rem';
+
+            poppedCount++;
+            document.getElementById('pop-count').textContent = poppedCount;
+
+            // Small mini confetti on balloon pop
+            confetti({
+                particleCount: 20,
+                spread: 40,
+                origin: { y: 0.7 }
+            });
+
+            if (poppedCount === 6) {
+                setTimeout(() => {
+                    alertBoxCustom("Fantastic! All sweet qualities unlocked for Priyanshi! 🎈✨");
+                }, 300);
+            }
+        }
+
+        // Blow Candle function
+        function blowCandle(candleElement) {
+            const flame = candleElement.querySelector('.flame');
+            if (flame) {
+                flame.style.display = 'none';
+                checkAllCandlesBlown();
+            }
+        }
+
+        function blowAllCandles() {
+            const flames = document.querySelectorAll('.flame');
+            flames.forEach(f => f.style.display = 'none');
+            checkAllCandlesBlown();
+        }
+
+        function checkAllCandlesBlown() {
+            const wishMsg = document.getElementById('wish-message');
+            wishMsg.classList.remove('hidden');
+            confetti({
+                particleCount: 80,
+                spread: 100,
+                origin: { y: 0.8 }
+            });
+        }
+
+        // Open Final Gift Box
+        function openGiftBox() {
+            const giftBox = document.getElementById('gift-box');
+            const reveal = document.getElementById('gift-reveal');
+            
+            giftBox.classList.add('scale-95', 'opacity-80');
+            giftBox.innerHTML = '<i class="fa-solid fa-face-smile-wink text-5xl"></i><span class="mt-2 text-sm font-semibold">Opened!</span>';
+            reveal.classList.remove('hidden');
+
+            // Grand Celebration Confetti
+            var count = 200;
+            var defaults = {
+              origin: { y: 0.7 }
+            };
+
+            function fire(particleRatio, opts) {
+              confetti(Object.assign({}, defaults, opts, {
+                particleCount: Math.floor(count * particleRatio)
+              }));
+            }
+
+            fire(0.25, { spread: 26, startVelocity: 55 });
+            fire(0.2, { spread: 60 });
+            fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+            fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+            fire(0.1, { spread: 120, startVelocity: 45 });
+        }
+
+        // Custom non-blocking message box replacing alert()
+        function alertBoxCustom(message) {
+            const div = document.createElement('div');
+            div.className = 'fixed top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-2xl z-50 animate-bounce font-medium text-sm md:text-base';
+            div.textContent = message;
+            document.body.appendChild(div);
+            setTimeout(() => {
+                div.style.transition = 'opacity 0.5s ease';
+                div.style.opacity = '0';
+                setTimeout(() => div.remove(), 500);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
